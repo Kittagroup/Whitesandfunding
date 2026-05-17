@@ -4,35 +4,49 @@
 
 White Sand Funding is an independent funding & credit strategist (NOT a lender, NOT a credit repair organization). The service helps clients access 0% interest business credit cards and build the personal & business credit profile that unlocks them — through tradelines, credit repair, shelf corporations, and structured application sequencing.
 
-This folder contains the **Phase 1 mockup** used to align stakeholders before development begins.
+This repo contains the **Phase 1 landing site** — a static, production-ready HTML site backed by a single compiled Tailwind stylesheet and a Calendly inline booking widget.
 
 ---
 
 ## Quick Start
 
-Open `whitesandfunding_index.html` directly to see the public landing page, or open `showcase.html` for the project showcase with embedded previews.
+Open `index.html` directly in a browser to preview locally (CSS is already compiled and committed at `assets/css/site.css`).
 
-### Public site (deployed)
+```bash
+# Optional: serve locally so internal links resolve cleanly
+npm run serve         # python3 -m http.server 8000 — http://localhost:8000
 
-| File | Purpose |
-|---|---|
-| `whitesandfunding_index.html` | **Public landing page** — hero with booking widget, why-it-works, services, how-it-works, FAQ. Primary CTA: book a strategy call. |
-| `privacy.html` | Privacy Policy (DRAFT — GDPR + CCPA coverage) |
-| `terms.html` | Terms of Service (DRAFT) |
-| `showcase.html` | Internal project showcase — overview + embedded previews |
-| `og-image.png` | Social share image (1200×630) |
+# Modify styles
+npm install            # one-time
+npm run dev            # watch + rebuild assets/css/site.css on save
+npm run build          # production build (minified)
+```
 
-### Internal folders
+### Site map
 
 | Path | Purpose |
 |---|---|
-| `docs/` | Internal documentation (audit, briefs) |
-| `phase-2/` | Phase 2 reference mockups (paused — not launching) |
+| `index.html` | **Public landing page** — hero with Calendly inline embed, why-it-works, services, how-it-works, FAQ |
+| `privacy.html` | Privacy Policy (GDPR + CCPA coverage) |
+| `terms.html` | Terms of Service |
+| `assets/css/site.css` | Compiled Tailwind + custom styles (committed; rebuild with `npm run build`) |
+| `assets/css/input.css` | Tailwind source — edit this, not `site.css` |
+| `assets/js/site.js` | Shared JS — mobile menu, nav-scroll, scroll-reveal observer |
+| `assets/img/og-image.png` | Social share image (1200×630) |
+| `assets/img/og-image.svg` | Source SVG for the OG image |
+| `tailwind.config.js` | Brand palette, shadows, animations |
+| `vercel.json` | Clean URLs (`/privacy` not `/privacy.html`), security headers, asset cache |
+| `robots.txt`, `sitemap.xml` | SEO |
 
-When deployed (e.g. Vercel), the entry URLs are:
+### Architecture
 
-- `…/whitesand-funding/whitesandfunding_index.html` — the live public landing page
-- `…/whitesand-funding/showcase.html` — project showcase with embedded previews
+The 3 HTML pages share a single stylesheet (`assets/css/site.css`) and a single script (`assets/js/site.js`). The announcement bar, nav, and footer are **structurally duplicated** across the 3 files but marked with `SHARED:` comment blocks — when editing any of those, sync the change in all 3 files.
+
+```
+index.html  ─┐
+privacy.html─┼─ <link href="assets/css/site.css">
+terms.html  ─┘   <script src="assets/js/site.js" defer>
+```
 
 ---
 
@@ -44,7 +58,7 @@ When deployed (e.g. Vercel), the entry URLs are:
 - ✅ Independent funding & credit strategist
 - ✅ All funding comes via 3rd-party issuer banks in the form of business credit cards & lines of credit, subject to their approval
 
-**Primary funnel:** Landing page → Pre-qualification form OR Calendly booking → Strategy call → Onboarded client.
+**Primary funnel:** Landing page → Calendly booking → Strategy call → Onboarded client.
 
 ### Six services
 
@@ -74,7 +88,7 @@ When deployed (e.g. Vercel), the entry URLs are:
 
 | Phase | Status | Description |
 |---|---|---|
-| **1 · Landing page** | ✅ Done | `whitesandfunding_index.html` — public marketing site with Calendly booking |
+| **1 · Landing page** | ✅ Done | `index.html` — public marketing site with Calendly booking |
 | **2 · CRM / Login** | ⏸ Paused | On hold — focus on lead-gen first |
 | **3 · PRD** | 🔜 Later | Product requirements document for developer handoff |
 
@@ -82,39 +96,41 @@ When deployed (e.g. Vercel), the entry URLs are:
 
 ## Before going live — checklist
 
-All three pages (`whitesandfunding_index.html`, `privacy.html`, `terms.html`) have **yellow placeholder pills** showing exactly where real data needs to go. Search for `class="ph"` or `[BRACKETS]` in any file to find them. Also remove the amber **DRAFT banner** at the top of each page.
+The legal pages still contain a single **yellow placeholder pill** (`class="ph"`) that needs attorney review. Search for `class="ph"` to find it.
 
 ### Critical (blocks launch)
 
-- [ ] **Entity name** — replace `[LEGAL ENTITY NAME]` everywhere (e.g. "White Sand Funding LLC")
-- [ ] **State of incorporation** — replace `[STATE OF INCORPORATION]` (e.g. "Delaware")
-- [ ] **Business address** — replace `[BUSINESS ADDRESS]` (street, city, state, ZIP)
-- [ ] **Phone** — replace `[PHONE]` everywhere (footer + JSON-LD + legal pages)
-- [ ] **Email** — replace `[EMAIL]` everywhere (footer + JSON-LD + privacy@/legal@ in policies)
-- [ ] **Hours** — replace `[HOURS]` (e.g. "Mon–Fri, 9am–6pm ET")
-- [ ] **Year** — replace `[YEAR]` in copyright lines
-- [ ] **Effective date** — replace `[EFFECTIVE DATE]` on privacy.html + terms.html (launch date)
-- [ ] **Calendly inline embed** — replace the mock widget in `#book` section with real Calendly snippet (`<div class="calendly-inline-widget" data-url="...">`)
-- [ ] **Attorney review** of privacy.html + terms.html + footer disclosure paragraph
-- [ ] **Remove DRAFT banner** from top of all three HTML files
-
-### Terms-specific placeholders
-
-- [ ] `[USD amount]` for liability cap (e.g. "$500" or "the amount you paid in last 6 months")
-- [ ] `[CITY, STATE]` for arbitration venue
-- [ ] `[COUNTY, STATE]` for court jurisdiction
-- [ ] Fee model paragraph in Section 6 (currently bracketed placeholder)
+- [ ] **Attorney review** of `privacy.html`, `terms.html`, and footer disclosure paragraph
+- [ ] **Arbitration clause** in `terms.html` §17 — attorney to confirm whether to retain (currently marked with a `ph` pill)
+- [ ] **Effective date** on `privacy.html` + `terms.html` — currently 2026-05-17, update to actual launch date
+- [ ] **Calendly URL** — currently points to `calendly.com/skyfah-info/30min`; verify this is the correct production booking link
 
 ### Nice to have
 
-- [ ] OG image `og-image.png` (1200×630) for social shares
 - [ ] State-by-state compliance review for tradeline & credit consulting services
 - [ ] Real testimonials (only when client consent obtained — do NOT fabricate)
-- [ ] Vercel deploy + custom domain pointed to whitesandfunding.com
+- [ ] Set up Vercel project, point custom domain to `whitesandfunding.com`
+- [ ] Set up analytics (Vercel Analytics or Plausible recommended — both privacy-friendly)
 
 ---
 
-## Recommended Tech Stack (for Phase 2)
+## Deploy (Vercel)
+
+```bash
+# One-time setup
+vercel link
+# Deploys
+vercel --prod
+```
+
+`vercel.json` enables:
+- Clean URLs — `/privacy` and `/terms` resolve to the `.html` files
+- Security headers — HSTS, CSP (allowing Calendly), Permissions-Policy, Referrer-Policy
+- 1-year immutable cache on `/assets/*`
+
+---
+
+## Recommended Tech Stack (for Phase 2 CRM — not yet started)
 
 - **Frontend** — Next.js 14, Tailwind CSS, shadcn/ui, react-hook-form + zod
 - **Backend** — Next.js API Routes, PostgreSQL via Prisma ORM
@@ -122,13 +138,12 @@ All three pages (`whitesandfunding_index.html`, `privacy.html`, `terms.html`) ha
 - **Auth** — Clerk or Auth.js with role-based access control
 - **Communications** — Resend (email), Twilio (SMS), Calendly (booking)
 - **Automation** — Inngest or Trigger.dev for event-driven workflows
-- **Integrations (later)** — DocuSign (e-signature for service agreements), Plaid (income verification), Zapier
+- **Integrations (later)** — DocuSign (e-signature), Plaid (income verification), Zapier
 
 ---
 
 ## Notes
 
-- All mockups are static HTML with Tailwind via CDN — no build step required.
 - Brand palette: white background + `navy` (#0B1730) dark sections + `sand` gold (#D4A847) accents + Apple system font stack (SF Pro on Apple devices, Inter fallback).
-- The Calendly section is currently a visual mockup. When ready, replace the entire `<div class="relative rounded-2xl bg-white p-5 sm:p-8">...</div>` block inside `#book` with the real Calendly inline embed snippet.
-- Yellow `[PLACEHOLDER]` pills are styled to be visually obvious — they will not look "good" on the live site, so you will notice if you forget to fill any.
+- The compiled `site.css` is committed so the site works without `npm install` — only rebuild when you edit `input.css` or any Tailwind classes in HTML.
+- All booking flows through the inline Calendly widget; no custom form handler is wired up.

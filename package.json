@@ -1,0 +1,14 @@
+{
+  "name": "whitesandfunding",
+  "version": "1.0.0",
+  "private": true,
+  "description": "White Sand Funding — Phase 1 landing site (static)",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/site.css --minify",
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/site.css --watch",
+    "serve": "python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

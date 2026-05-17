@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,100 +8,48 @@
 <meta name="description" content="How White Sand Funding collects, uses, and protects your information." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://whitesandfunding.com/privacy.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://whitesandfunding.com/privacy.html" />
+<meta property="og:title" content="Privacy Policy — White Sand Funding" />
+<meta property="og:description" content="How White Sand Funding collects, uses, and protects your information." />
+<meta property="og:image" content="https://whitesandfunding.com/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230B1730'/><text x='50%25' y='55%25' text-anchor='middle' fill='%23D4A847' font-family='-apple-system,sans-serif' font-weight='700' font-size='30'>W</text></svg>" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['-apple-system','BlinkMacSystemFont','"SF Pro Text"','"SF Pro Display"','Inter','system-ui','"Segoe UI"','"Helvetica Neue"','Arial','sans-serif'],
-        display: ['-apple-system','BlinkMacSystemFont','"SF Pro Display"','Inter','system-ui','"Helvetica Neue"','sans-serif']
-      },
-      colors: {
-        cream:  { 50:'#FBF8F1', 100:'#F6F0E1', 200:'#EFE4C9' },
-        sand:   { 300:'#E8C66B', 400:'#DFB456', 500:'#D4A847', 600:'#B58F30', 700:'#8E6622' },
-        navy:   { 50:'#EEF1F8', 100:'#DDE3EE', 700:'#0F1F3B', 800:'#0B1730', 900:'#070F22', 950:'#04081A' },
-        ink:    { 900:'#0B2030', 700:'#1F2937', 500:'#6B7280', 400:'#9CA3AF', 300:'#D1D5DB', 200:'#E5E7EB' }
-      },
-      boxShadow: {
-        soft: '0 1px 3px rgba(11,23,48,0.04), 0 6px 20px rgba(11,23,48,0.06)'
-      }
-    }
-  }
-}
-</script>
-<style>
-  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
-    color: #0B2030;
-    background: #FFFFFF;
-  }
-  .font-display {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Inter, system-ui, sans-serif;
-    letter-spacing: -0.025em;
-    font-weight: 600;
-  }
-  .eyebrow { font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; }
-  .dark-section { background:#0B1730; color:#FBF8F1; }
-  .dark-section .text-body { color:rgba(251,248,241,0.72); }
-
-  /* Placeholder style — makes [BRACKETS] visually obvious */
-  .ph {
-    background: linear-gradient(180deg, #FEF3C7 0%, #FDE68A 100%);
-    color: #92400E;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-family: ui-monospace, "SF Mono", monospace;
-    font-size: 0.9em;
-    font-weight: 600;
-    border: 1px dashed #D97706;
-  }
-  .dark-section .ph {
-    background: linear-gradient(180deg, rgba(254,243,199,0.18) 0%, rgba(253,230,138,0.14) 100%);
-    color: #FDE68A;
-    border-color: rgba(217,119,6,0.6);
-  }
-
-  /* Legal page typography */
-  .legal h2 { font-family: -apple-system, "SF Pro Display", Inter, sans-serif; font-weight:600; font-size:1.75rem; letter-spacing:-0.02em; margin-top:3rem; margin-bottom:1rem; color:#0B1730; scroll-margin-top: 5rem; }
-  .legal h3 { font-family: -apple-system, "SF Pro Display", Inter, sans-serif; font-weight:600; font-size:1.125rem; margin-top:2rem; margin-bottom:0.75rem; color:#0B1730; }
-  .legal p { color:#374151; line-height:1.75; margin-bottom:1rem; }
-  .legal ul { color:#374151; line-height:1.8; margin-bottom:1rem; padding-left:1.5rem; }
-  .legal ul li { margin-bottom:0.4rem; list-style: disc; }
-  .legal a { color:#0F1F3B; text-decoration: underline; }
-  .legal strong { color:#0B1730; font-weight:600; }
-  .nav-scrolled { box-shadow: 0 4px 20px rgba(11,23,48,0.06); border-color: transparent; }
-</style>
+<link rel="stylesheet" href="assets/css/site.css" />
 </head>
 <body class="antialiased">
 
-<!-- ANNOUNCEMENT BAR -->
+<!-- ============================================================
+     SHARED: Announcement bar — sync across index/privacy/terms
+     ============================================================ -->
 <div class="bg-navy-900 text-cream-100 text-xs">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-center gap-2 text-center">
-    <span class="inline-flex h-1.5 w-1.5 rounded-full bg-sand-400"></span>
+    <span class="inline-flex h-1.5 w-1.5 rounded-full bg-sand-400" aria-hidden="true"></span>
     <span><span class="font-semibold text-sand-300">Free strategy call</span> · No hard credit pull · 700+ FICO recommended</span>
   </div>
 </div>
 
-<!-- NAV -->
+<!-- ============================================================
+     SHARED: Nav header — sync across index/privacy/terms
+     ============================================================ -->
 <header id="nav" class="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-ink-200/60 transition">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="whitesandfunding_index.html" class="flex items-center gap-2.5">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-navy-800 text-sand-400 font-display font-semibold text-lg">W</span>
+    <a href="index.html" class="flex items-center gap-2.5">
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-navy-800 text-sand-400 font-display font-semibold text-lg" aria-hidden="true">W</span>
       <span class="font-display text-xl tracking-tight text-navy-800">White Sand <span class="text-sand-600 italic">Funding</span></span>
     </a>
     <div class="hidden md:flex items-center gap-7 text-sm font-medium text-navy-800">
-      <a href="whitesandfunding_index.html#why" class="hover:text-sand-600 transition">Why It Works</a>
-      <a href="whitesandfunding_index.html#services" class="hover:text-sand-600 transition">Services</a>
-      <a href="whitesandfunding_index.html#how" class="hover:text-sand-600 transition">How It Works</a>
-      <a href="whitesandfunding_index.html#faq" class="hover:text-sand-600 transition">FAQ</a>
+      <a href="index.html#why" class="hover:text-sand-600 transition">Why It Works</a>
+      <a href="index.html#services" class="hover:text-sand-600 transition">Services</a>
+      <a href="index.html#how" class="hover:text-sand-600 transition">How It Works</a>
+      <a href="index.html#faq" class="hover:text-sand-600 transition">FAQ</a>
     </div>
-    <a href="whitesandfunding_index.html#book" class="inline-flex items-center gap-1.5 rounded-full bg-navy-800 text-white text-sm font-semibold px-4 py-2 hover:bg-navy-900 transition">
+    <a href="index.html#book" class="inline-flex items-center gap-1.5 rounded-full bg-navy-800 text-white text-sm font-semibold px-4 py-2 hover:bg-navy-900 transition">
       Book a Call
-      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M7.05 4.05a.75.75 0 011.06 0l5.25 5.25a.75.75 0 010 1.06l-5.25 5.25a.75.75 0 11-1.06-1.06L11.69 10 7.05 5.36a.75.75 0 010-1.06z"/></svg>
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7.05 4.05a.75.75 0 011.06 0l5.25 5.25a.75.75 0 010 1.06l-5.25 5.25a.75.75 0 11-1.06-1.06L11.69 10 7.05 5.36a.75.75 0 010-1.06z"/></svg>
     </a>
   </nav>
 </header>
@@ -128,8 +76,7 @@ tailwind.config = {
 <!-- TOC + CONTENT -->
 <section class="bg-white py-16">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Table of Contents -->
-    <nav class="rounded-2xl border border-ink-200/60 bg-cream-50 p-6 mb-12">
+    <nav class="rounded-2xl border border-ink-200/60 bg-cream-50 p-6 mb-12" aria-label="Table of contents">
       <p class="eyebrow text-sand-600 mb-4">Contents</p>
       <ol class="space-y-2 text-sm text-navy-800 font-medium">
         <li><a href="#about" class="hover:text-sand-600">1. About this Policy</a></li>
@@ -214,7 +161,6 @@ tailwind.config = {
         <li><strong>Calendly</strong> — appointment scheduling and reminders. <a href="https://calendly.com/privacy" target="_blank" rel="noopener">Calendly's Privacy Policy</a>.</li>
         <li><strong>Vercel, Inc.</strong> — website hosting and content delivery. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel's Privacy Policy</a>.</li>
         <li><strong>Email service providers</strong> (e.g., Google Workspace / Gmail) — sending and receiving email.</li>
-        <li><span class="ph">[Add other vendors as you adopt them: Zapier, Notion, HubSpot, CRM provider, etc.]</span></li>
       </ul>
 
       <h3>4.2 Lending and credit partners</h3>
@@ -332,8 +278,8 @@ tailwind.config = {
         Attn: Privacy<br/>
         624 W University Dr #440, Denton, TX 76201<br/>
         <br/>
-        Email: Info@whitesandfunding.com<br/>
-        Phone: (940) 202-0858
+        Email: <a href="mailto:Info@whitesandfunding.com">Info@whitesandfunding.com</a><br/>
+        Phone: <a href="tel:+19402020858">(940) 202-0858</a>
       </p>
       <p class="text-xs text-ink-500 mt-10 pt-6 border-t border-ink-200/60">
         © 2026 White Sand Funding. All rights reserved.
@@ -342,12 +288,14 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ============================================================
+     SHARED: Footer — sync across index/privacy/terms
+     ============================================================ -->
 <footer class="dark-section">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid md:grid-cols-4 gap-8 text-sm">
     <div>
       <div class="flex items-center gap-2.5">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sand-400 text-navy-900 font-display font-semibold text-lg">W</span>
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sand-400 text-navy-900 font-display font-semibold text-lg" aria-hidden="true">W</span>
         <span class="font-display text-xl text-cream-50">White Sand <span class="italic text-sand-300">Funding</span></span>
       </div>
       <p class="mt-4 text-body leading-relaxed">A complete credit &amp; funding system — under one roof. Not a lender.</p>
@@ -355,19 +303,19 @@ tailwind.config = {
     <div>
       <p class="font-display text-lg text-cream-50 mb-3">Services</p>
       <ul class="space-y-2 text-body">
-        <li><a href="whitesandfunding_index.html#services" class="hover:text-sand-300">Shelf Corporations</a></li>
-        <li><a href="whitesandfunding_index.html#services" class="hover:text-sand-300">Tradelines</a></li>
-        <li><a href="whitesandfunding_index.html#services" class="hover:text-sand-300">Credit Repair</a></li>
-        <li><a href="whitesandfunding_index.html#services" class="hover:text-sand-300">Personal Funding</a></li>
-        <li><a href="whitesandfunding_index.html#services" class="hover:text-sand-300">Business Funding</a></li>
-        <li><a href="whitesandfunding_index.html#services" class="hover:text-sand-300">Corporate Credit</a></li>
+        <li><a href="index.html#services" class="hover:text-sand-300">Shelf Corporations</a></li>
+        <li><a href="index.html#services" class="hover:text-sand-300">Tradelines</a></li>
+        <li><a href="index.html#services" class="hover:text-sand-300">Credit Repair</a></li>
+        <li><a href="index.html#services" class="hover:text-sand-300">Personal Funding</a></li>
+        <li><a href="index.html#services" class="hover:text-sand-300">Business Funding</a></li>
+        <li><a href="index.html#services" class="hover:text-sand-300">Corporate Credit</a></li>
       </ul>
     </div>
     <div>
       <p class="font-display text-lg text-cream-50 mb-3">Company</p>
       <ul class="space-y-2 text-body">
-        <li><a href="whitesandfunding_index.html#book" class="hover:text-sand-300">Book a Call</a></li>
-        <li><a href="whitesandfunding_index.html#faq" class="hover:text-sand-300">FAQ</a></li>
+        <li><a href="index.html#book" class="hover:text-sand-300">Book a Call</a></li>
+        <li><a href="index.html#faq" class="hover:text-sand-300">FAQ</a></li>
         <li><a href="privacy.html" class="hover:text-sand-300">Privacy Policy</a></li>
         <li><a href="terms.html" class="hover:text-sand-300">Terms of Service</a></li>
       </ul>
@@ -375,9 +323,9 @@ tailwind.config = {
     <div>
       <p class="font-display text-lg text-cream-50 mb-3">Contact</p>
       <ul class="space-y-2 text-body">
-        <li>📞 (940) 202-0858</li>
-        <li>✉ Info@whitesandfunding.com</li>
-        <li>🕒 Mon–Fri, 9am–5pm CT</li>
+        <li><span aria-hidden="true">📞</span> <a href="tel:+19402020858" class="hover:text-sand-300">(940) 202-0858</a></li>
+        <li><span aria-hidden="true">✉</span> <a href="mailto:Info@whitesandfunding.com" class="hover:text-sand-300">Info@whitesandfunding.com</a></li>
+        <li><span aria-hidden="true">🕒</span> Mon–Fri, 9am–5pm CT</li>
       </ul>
     </div>
   </div>
@@ -393,12 +341,6 @@ tailwind.config = {
   </div>
 </footer>
 
-<script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 8) nav.classList.add('nav-scrolled');
-  else nav.classList.remove('nav-scrolled');
-});
-</script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
