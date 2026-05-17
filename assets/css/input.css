@@ -127,6 +127,29 @@
     box-shadow: 0 -4px 20px rgba(7, 15, 34, 0.1);
   }
 
+  /* ============================================================
+     Calendly responsive container — height scales with container width
+     ============================================================ */
+  .cal-frame {
+    container-type: inline-size;
+  }
+  .cal-widget {
+    min-width: 320px;
+    /* Fallback for browsers without container query support (~4% of users) */
+    height: clamp(640px, 78vh, 820px);
+  }
+  @supports (container-type: inline-size) {
+    .cal-widget {
+      /* Width-based scaling — 95% of container width, clamped 640-820px
+         container  360px (mobile)  → 640px (min)
+         container  600px           → 640px (min)
+         container  700px (laptop)  → 665px
+         container  800px           → 760px
+         container  900px+ (xl)     → 820px (cap) */
+      height: clamp(640px, 95cqi, 820px);
+    }
+  }
+
   /* Yellow placeholder pill — shows where real data still needs to go */
   .ph {
     background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%);
